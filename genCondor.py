@@ -26,7 +26,8 @@ def writeFile(name, content):
 # scriptName : script name
 # location : path to script name
 # resolution : resolution to work (480p, 720p, 1080p)
-def condorFile(cant, img, scriptName, location, resolution):
+# fileName : file name defined
+def condorFile(cant, img, scriptName, location, resolution, fileName):
     string = []
     transfer_core = "transfer_input_files = {}{}$(Process).sh,/cluster/andresf01/sourceVideos/".format(location,scriptName)
     
@@ -47,7 +48,7 @@ def condorFile(cant, img, scriptName, location, resolution):
     if len(files) > 0:
         for key, value in enumerate(files):
             string[5] = value
-            writeFile("ice{}.condor".format(key), string)
+            writeFile("{}{}.condor".format(fileName, key), string)
             pass
         pass
     
@@ -94,9 +95,9 @@ def showHelp():
 if __name__ == "__main__":
     import sys
     args = sys.argv
-    if (len(args) == 6):
+    if (len(args) == 7):
         img = loadImg(args[2])
-        condorFile(args[1], img, args[3], args[4], args[5])
+        condorFile(args[1], img, args[3], args[4], args[5], args[6])
     else:
         showHelp()
     
