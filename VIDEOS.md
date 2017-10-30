@@ -3,6 +3,7 @@
  - [480p](#480p)
  - [720p](#720p)
  - [1080p](#1080p)
+ - [4096p](#4096p)
 
 ## 480p
 
@@ -66,3 +67,16 @@
 - station2_1080p25
 - sunflower_1080p25
 - tractor_1080p25
+
+## 4096p
+
+ - Netflix_Boat_4096x2160_60fps_10bit_420
+ - Netflix_BoxingPractice_4096x2160_60fps_10bit_420
+ - Netflix_Crosswalk_4096x2160_60fps_10bit_420
+ - Netflix_FoodMarket2_4096x2160_60fps_10bit_420
+ - Netflix_FoodMarket_4096x2160_60fps_10bit_420
+ - Netflix_Narrator_4096x2160_60fps_10bit_420
+ - Netflix_RitualDance_4096x2160_60fps_10bit_420
+ - Netflix_SquareAndTimelapse_4096x2160_60fps_10bit_420
+ - Netflix_Tango_4096x2160_60fps_10bit_420
+ - Netflix_TunnelFlag_4096x2160_60fps_10bit_420
