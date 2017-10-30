@@ -90,7 +90,17 @@ def loadImg(imgName):
         exit()
 
 def showHelp():
-    print ("Please check your parameters")
+    instruct = ("genCondor: Script to generate condor files \n"
+    "====================================================== \n"
+    "python3 genCondor.py : shows this help \n"
+    "python3 cantity image script-name location resolution file-name \n"
+    "*cantity : amount of queues to run (presets) \n"
+    "*image : docker image to use \n"
+    "*script-name : base name of the script \n"
+    "*location : path to the script \n"
+    "*resolution : videos resolution [480,720,1080] \n"
+    "*file-name : name of condor files to generate")
+    print (instruct)
 
 if __name__ == "__main__":
     import sys
@@ -98,6 +108,9 @@ if __name__ == "__main__":
     if (len(args) == 7):
         img = loadImg(args[2])
         condorFile(args[1], img, args[3], args[4], args[5], args[6])
+    elif (len(args) == 1):
+        showHelp()
     else:
+        print ("Please check your parameters")
         showHelp()
     
