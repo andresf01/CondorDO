@@ -1,7 +1,7 @@
 import os as os
 
 l480 = ['akiyo_cif.y4m','bridge_far_cif.y4m','city_4cif.y4m','container_cif.y4m','flower_cif.y4m','grandma_qcif.y4m','husky_cif.y4m','news_cif.y4m','salesman_qcif.y4m','tennis_sif.y4m   ','bowing_cif.y4m','bus_cif.y4m','claire_qcif.y4m','crew_4cif.y4m','football_cif.y4m','harbour_4cif.y4m','ice_4cif.y4m','pamphlet_cif.y4m','sign_irene_cif.y4m','waterfall_cif.y4m','bridge_close_cif.y4m','carphone_qcif.y4m','coastguard_cif.y4m','deadline_cif.y4m','foreman_cif.y4m','highway_cif.y4m','mobile_cif.y4m','paris_cif.y4m','suzie_qcif.y4m'] 
-l720 = ['720p50_mobcal_ter','720p50_parkrun_ter','720p50_shields_ter','720p5994_stockholm_ter','FourPeople_1280x720_60','Johnny_1280x720_60','KristenAndSara_1280x720_60','vidyo1_720p_60fps','vidyo3_720p_60fps','vidyo4_720p_6']
+l720 = ['720p50_mobcal_ter','720p50_parkrun_ter','720p50_shields_ter','720p5994_stockholm_ter','FourPeople_1280x720_60','Johnny_1280x720_60','KristenAndSara_1280x720_60','vidyo1_720p_60fps','vidyo3_720p_60fps','vidyo4_720p_60fps']
 l1080 = ['blue_sky_1080p25','crowd_run_1080p50','dinner_1080p30','ducks_take_off_1080p50','factory_1080p30','in_to_tree_1080p50','life_1080p30','old_town_cross_1080p50','park_joy_1080p50','pedestrian_area_1080p25','rush_hour_1080p25','sintel_trailer_2k_1080p24','station2_1080p25','sunflower_1080p25','tractor_1080p25']
 l4096 = ['Netflix_Boat_4096x2160_60fps_10bit_420','Netflix_BoxingPractice_4096x2160_60fps_10bit_420','Netflix_Crosswalk_4096x2160_60fps_10bit_420','Netflix_FoodMarket2_4096x2160_60fps_10bit_420','Netflix_FoodMarket_4096x2160_60fps_10bit_420','Netflix_Narrator_4096x2160_60fps_10bit_420','Netflix_RitualDance_4096x2160_60fps_10bit_420','Netflix_SquareAndTimelapse_4096x2160_60fps_10bit_420','Netflix_Tango_4096x2160_60fps_10bit_420','Netflix_TunnelFlag_4096x2160_60fps_10bit_420']
 
@@ -39,9 +39,9 @@ def condorFile(number, img, scriptName, location, resolution, fileName):
     string.append("should_transfer_files = YES")
     string.append("")
     string.append("when_to_transfer_output = ON_EXIT")
-    string.append("output = out.$(Process)")
-    string.append("error = err.$(Process)")
-    string.append("log = log.$(Process)")
+    string.append("output = out.$(Cluster).$(Process)")
+    string.append("error = err.$(Cluster).$(Process)")
+    string.append("log = log.$(Cluster).$(Process)")
     string.append("queue {}".format(number))
     
     files = addVideos(transfer_core, resolution)

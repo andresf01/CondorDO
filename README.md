@@ -40,8 +40,9 @@ Pick a resolution to access all videos of that set. Check video list in `VIDEOS.
  - `480` 
  - `720`
  - `1080`
+ - `4096`
 
-This only apply to Universidad del Valle's cluster, if you need set new paths check lists `l480`, `l720` and `l1080`.
+This only apply to Universidad del Valle's cluster, if you need set new paths check lists `l480`, `l720`, `l1080`, and `l4096`.
 
 ### Name of condor files
 
